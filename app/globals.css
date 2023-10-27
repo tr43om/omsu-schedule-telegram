@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .out-flow {
+    width: 100vw;
+    position: relative;
+    left: calc(-50vw + 50%);
+  }
+
+  .text-gradient {
+    background-clip: text;
+    background-image: linear-gradient(to right, #d63664, #f06f78);
+    color: transparent;
+  }
+}
