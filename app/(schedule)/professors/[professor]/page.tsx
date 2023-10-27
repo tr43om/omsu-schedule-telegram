@@ -2,9 +2,7 @@ import { Schedule } from "@/components";
 
 const getProfessor = async (professorId: string) => {
   const data = await fetch(
-    `${
-      process.env.VERCEL_URL ?? "http://localhost:3000"
-    }/api/professors/${professorId}`,
+    `https://${process.env.NEXT_PUBLIC_VERCEL_URL}/api/professors/${professorId}`,
     {
       next: { revalidate: 180 },
     }
