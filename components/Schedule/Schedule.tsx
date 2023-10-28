@@ -7,6 +7,7 @@ import { Badge, ThemeSwitcher, ViewToggle } from "../ui";
 import notFoundIllustration from "@/assets/404.svg";
 import Image from "next/image";
 import { CurrentDate } from "../CurrentDate";
+import { StripeCalendar } from "../StripeCalendar";
 
 type ScheduleProps = {
   schedule: TransformedScheduleDto | undefined;
@@ -37,7 +38,7 @@ const Schedule = ({ schedule }: ScheduleProps) => {
             <ThemeSwitcher />
           </div>
         </div>
-        <CurrentDate />
+        <StripeCalendar />
 
         <div className="relative grid items-start justify-center   ">
           <ScheduleList schedule={schedule} />

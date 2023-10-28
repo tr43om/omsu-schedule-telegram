@@ -10,7 +10,10 @@ export async function GET(
     const searchParams = request.nextUrl.searchParams;
     console.log(searchParams);
     const date_query = searchParams.get("date") || Date.now();
-    const timestamp = new Date(date_query).getTime();
+    const timestamp =
+      date_query === "today"
+        ? new Date().getTime()
+        : new Date(date_query).getTime();
 
     const response = await fetch(
       `https://eservice.omsu.ru/schedule/backend/schedule/group/${id}`,

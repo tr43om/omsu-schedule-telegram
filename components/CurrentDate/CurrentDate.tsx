@@ -9,7 +9,10 @@ import React from "react";
 const CurrentDate = () => {
   const searchParams = useSearchParams();
 
-  const selected_date = searchParams.get("date") as string;
+  const selected_date =
+    searchParams.get("date") === "today"
+      ? new Date()
+      : (searchParams.get("date") as string);
 
   const selectedDay = getDate(new Date(selected_date));
 

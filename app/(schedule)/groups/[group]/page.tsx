@@ -1,12 +1,13 @@
 import { Schedule } from "@/components";
 
 const getGroup = async (groupID: string) => {
-  const data = await fetch(
-    `https://${process.env.NEXT_PUBLIC_VERCEL_URL}/api/groups/${groupID}`,
-    {
-      next: { revalidate: 180 },
-    }
-  ).then((res) => res.json());
+  const url = `${
+    process.env.NEXT_PUBLIC_URL ?? "https://" + process.env.NEXT_PUBLIC_URL
+  }/api/groups/${groupID}`;
+  console.log(url);
+  const data = await fetch(url, {
+    next: { revalidate: 180 },
+  }).then((res) => res.json());
 
   return data;
 };
